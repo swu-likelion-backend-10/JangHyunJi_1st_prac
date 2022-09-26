@@ -1,5 +1,6 @@
 package assign_2nd.regInfo.post.domain;
 
+import assign_2nd.regInfo.post.dto.BoardDto;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -9,7 +10,7 @@ import javax.persistence.*;
 @Data
 @NoArgsConstructor
 @Entity
-public class Board {
+public class Board extends BaseTimeEntity {
 
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
@@ -34,5 +35,12 @@ public class Board {
     this.age = age;
     this.major = major;
     this.introduction = introduction;
+  }
+
+  public void update(BoardDto boardDto) {
+    this.name = boardDto.getName();
+    this.age = boardDto.getAge();
+    this.major = boardDto.getMajor();
+    this.introduction = boardDto.getIntroduction();
   }
 }
