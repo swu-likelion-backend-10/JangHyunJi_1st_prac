@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Admin page</title>
+</head>
+<body>
+<table>
+  <thead>
+  <tr>
+    <th>id</th>
+    <th>email</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each="member : ${memberList}">
+    <td>
+      <span th:text="${member.id}"></span>
+    </td>
+    <td>
+      <span th:text="${member.email}"></span>
+    </td>
+  </tr>
+  </tbody>
+</table>
+</body>
+</html>
